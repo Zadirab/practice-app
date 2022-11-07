@@ -1,4 +1,5 @@
 import React from 'react'
+import '../style/App.css'
 
 const PostItem = (props) => {
     console.log(props);
@@ -7,10 +8,10 @@ const PostItem = (props) => {
       <div className='post__content'>
         <strong>{props.post.id} {props.post.title}</strong>
         <div>{props.post.body}</div>
-        <div className='post__btns'>
+      </div>
+      <div className='post__btns'>
           <button>Удалить</button>
         </div>
-      </div>
     </div>
   )
 }
