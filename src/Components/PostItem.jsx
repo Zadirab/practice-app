@@ -2,6 +2,7 @@ import React from 'react'
 import '../style/App.css'
 
 const PostItem = (props) => {
+  
   return (
     <div className='post'>
       <div className='post__content'>
