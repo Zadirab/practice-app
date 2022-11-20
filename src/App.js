@@ -8,23 +8,23 @@ import MyInput from "./Components/UI/input/MyInput";
 import "./style/App.css";
 
 function App() {
-  const [posts, usePosts] = useState([
+  const [posts, setPost] = useState([
     { id: 1, title: "Javascript", body: "Description" },
     { id: 2, title: "Javascript 2", body: "Description" },
     { id: 3, title: "Javascript 3", body: "Description" },
   ]);
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
+  const [title, setTitle] = useState("");
+  const [body, setBody] = useState("");
 
   const addNewPost = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const newPost = {
       id: Date.now(),
       title,
       body,
-    }
-    console.log(newPost)
-    //  setPost([...posts, newPost])
+    };
+    console.log(newPost);
+    setPost([...posts, newPost]);
   };
 
   return (
@@ -32,19 +32,19 @@ function App() {
       <form>
         <MyInput
           value={title}
-          onChange={e => setTitle(e.target.value)}
+          onChange={(e) => setTitle(e.target.value)}
           type="text"
           placeholder="Название поста"
         />
         <MyInput
           value={body}
-          onChange={e => setBody(e.target.value)}
+          onChange={(e) => setBody(e.target.value)}
           type="text"
-          placeholder="Опиасние поста"
+          placeholder="Описание поста"
         />
-        <MyButton onClick={addNewPost}>Создать пост</MyButton>
+        <MyButton onClick = {addNewPost}> Создать пост</MyButton>
       </form>
-      <PostList posts={posts} title="Посты про JS" />
+      <PostList posts={posts} title = "Посты про JS" />
     </div>
   );
 }
